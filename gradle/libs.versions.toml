@@ -1,0 +1,46 @@
+[versions]
+#AGP
+androidGradlePlugin = "8.1.1"
+#Kotlin
+kotlin = "1.9.10"
+#Coroutines
+coroutines = "1.7.3"
+#Serialization
+kserialization = "1.6.0"
+#Network
+ktor = "2.3.4"
+#Image
+kamel = "0.7.3"
+#Compose
+androidxComposeCompiler = "1.5.3"
+
+[libraries]
+#AGP
+android-tools-build-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+#Kotlin GP
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" } #kotlin("gradle-plugin")
+#Coroutines
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+#Serialization
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kserialization" }
+#Network
+ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-kserialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+#Image
+kamel-image = { group = "media.kamel", name = "kamel-image", version.ref = "kamel" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+#kotlin-compose-plugin = { id = "org.jetbrains.compose" }
+#jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrains-compose" }
+
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" } # kotlin("jvm")
+kotlinx-serialization-plugin = { id = "org.jetbrains.kotlin.plugin.serialization", version = "kotlin" } #kotlin("plugin.serialization")
+kmm-project-compose = { id = "kmm.compose", version = "unspecified" }
+
+[bundles]
+network = ["ktor-core", "ktor-logging", "ktor-kserialization", "ktor-content-negotiation"]

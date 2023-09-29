@@ -4,6 +4,7 @@ include(":androidApp")
 include(":shared")
 
 pluginManagement {
+    includeBuild("build-common")
     repositories {
         gradlePluginPortal()
         mavenCentral()

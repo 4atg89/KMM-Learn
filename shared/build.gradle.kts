@@ -3,6 +3,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     kotlin("plugin.serialization")
+//    alias(libs.plugins.kmm.project.compose)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -43,17 +44,10 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 //put your multiplatform dependencies here
-                implementation("io.ktor:ktor-client-core:2.3.4")
-                implementation("io.ktor:ktor-client-logging:2.3.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.4")
-                implementation("io.ktor:ktor-client-content-negotiation:2.3.4")
-                implementation("media.kamel:kamel-image:0.7.3")
-
-//                implementation("com.github.yeicor:ktmpwasm:1.0.0") { isChanging = true }
-//                implementation("com.github.yeicor:kraphviz:1.0.0") //{ isChanging = true }
-
+                implementation(libs.bundles.network)
+                implementation(libs.coroutines.core)
+                implementation(libs.kotlinx.serialization)
+                implementation(libs.kamel.image)
 
                 api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
                 api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom
