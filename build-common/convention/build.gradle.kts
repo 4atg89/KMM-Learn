@@ -13,7 +13,7 @@ java {
 dependencies {
     compileOnly(libs.android.tools.build.gradle.plugin)
     compileOnly(libs.kotlin.gradle.plugin)
-//    compileOnly(libs.jetbrains.compose)
+    compileOnly("org.jetbrains.compose:org.jetbrains.compose.gradle.plugin:1.5.2")
 }
 
 gradlePlugin {
@@ -22,24 +22,14 @@ gradlePlugin {
      */
     plugins {
 
-//        register("sondaAndroidApplication") {
-//            id = "sonda.android.application"
-//            implementationClass = "AndroidApplicationConventionPlugin"
-//        }
-//
-//        register("sondaAndroidLibrary") {
-//            id = "sonda.android.library"
-//            implementationClass = "AndroidLibraryConventionPlugin"
-//        }
-//
+        register("kmmProjectLibrary") {
+            id = "example.library"
+            implementationClass = "KotlinLibraryConventionPlugin"
+        }
+
         register("kmmCompose") {
             id = "kmm.compose"
             implementationClass = "ComposeConventionPlugin"
         }
-//
-//        register("sondaKotlin") {
-//            id = "sonda.kotlin"
-//            implementationClass = "KotlinLibraryConventionPlugin"
-//        }
     }
 }

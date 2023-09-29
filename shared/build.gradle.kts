@@ -1,7 +1,9 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("org.jetbrains.compose")
+//    id("org.jetbrains.compose")
+    alias(libs.plugins.jetbrains.compose)
+//    alias(libs.plugins.kmm.project.compose)
     kotlin("plugin.serialization")
 //    alias(libs.plugins.kmm.project.compose)
 }
@@ -43,11 +45,13 @@ kotlin {
         }
         val commonMain by getting {
             dependencies {
+                implementation(project(":data:network"))
                 //put your multiplatform dependencies here
-                implementation(libs.bundles.network)
+//                implementation(libs.bundles.network)
                 implementation(libs.coroutines.core)
-                implementation(libs.kotlinx.serialization)
+//                implementation(libs.kotlinx.serialization)
                 implementation(libs.kamel.image)
+                implementation(libs.bundles.di.kotlin)
 
                 api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
                 api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom

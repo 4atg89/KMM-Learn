@@ -1,4 +1,4 @@
-package com.example.kmmproject
+package com.example.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
