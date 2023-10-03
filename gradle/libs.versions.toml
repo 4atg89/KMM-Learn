@@ -18,7 +18,10 @@ androidxComposeCompiler = "1.5.3"
 jetbrainsComposeVersion = "1.5.2"
 #Koin
 koinVersion = "3.4.3"
+koinComposeVersion = "1.0.4"
 koinAnnotationsVersion = "1.2.2"
+#Precompose
+precomposeVersion = "1.5.4"
 
 [libraries]
 #AGP
@@ -39,10 +42,16 @@ kamel-image = { group = "media.kamel", name = "kamel-image", version.ref = "kame
 
 #DI - Koin
 di-koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinVersion" }
+di-koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koinComposeVersion" }
 di-koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koinVersion" }
-di-koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinVersion" }
+di-koin-android-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinVersion" }
 di-koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koinAnnotationsVersion" }
 di-koin-ksp = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koinAnnotationsVersion" }
+
+#Precompose
+precompose-core = { group = "moe.tlaster", name = "precompose", version.ref = "precomposeVersion" }
+precompose-core-viewmodel = { group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precomposeVersion" }
+precompose-core-koin = { group = "moe.tlaster", name = "precompose-koin", version.ref = "precomposeVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -60,5 +69,6 @@ kmm-example-library = { id = "example.library", version = "unspecified" }
 
 [bundles]
 network = ["ktor-core", "ktor-logging", "ktor-kserialization", "ktor-content-negotiation"]
-di = ["di-koin-core", "di-koin-android", "di-koin-compose", "di-koin-annotations"]
-di-kotlin = ["di-koin-core", "di-koin-annotations"]
+di = ["di-koin-core", "di-koin-android", "di-koin-android-compose", "di-koin-annotations"]
+di-kotlin = ["di-koin-core", "di-koin-compose", "di-koin-annotations"]
+precompose = ["precompose-core", "precompose-core-viewmodel", "precompose-core-koin"]

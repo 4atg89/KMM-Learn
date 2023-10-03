@@ -53,8 +53,9 @@ kotlin {
                 implementation(libs.kamel.image)
                 implementation(libs.bundles.di.kotlin)
 
-                api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
-                api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom
+//                api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
+//                api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom
+                implementation(libs.bundles.precompose)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)

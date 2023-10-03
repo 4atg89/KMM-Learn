@@ -51,6 +51,7 @@ dependencies {
     implementation("androidx.compose.material:material:1.4.3")
     implementation("androidx.activity:activity-compose:1.7.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("moe.tlaster:precompose:1.5.4")
     implementation(libs.bundles.di)
 
 }

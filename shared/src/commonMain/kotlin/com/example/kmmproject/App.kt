@@ -24,6 +24,7 @@ import com.example.network.ShortGame
 import com.example.network.TestRequest
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
+import moe.tlaster.precompose.navigation.rememberNavigator
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.koin.mp.KoinPlatform.getKoin
 
