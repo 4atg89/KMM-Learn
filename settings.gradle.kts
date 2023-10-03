@@ -2,6 +2,7 @@ rootProject.name = "MyApplication"
 
 
 include(":androidApp")
+include(":desktop")
 include(":shared")
 include(":data:network")
 include(":data:games")

@@ -18,7 +18,11 @@ kotlin {
             }
         }
     }
-
+    jvm("desktop") {
+        compilations.all {
+            kotlinOptions.jvmTarget = "17"
+        }
+    }
     listOf(
         iosX64(),
         iosArm64(),

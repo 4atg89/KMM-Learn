@@ -20,7 +20,12 @@ kotlin {
             }
         }
     }
-
+//    jvm()
+    jvm("desktop") {
+        compilations.all {
+            kotlinOptions.jvmTarget = "17"
+        }
+    }
     listOf(
         iosX64(),
         iosArm64(),
@@ -34,15 +39,31 @@ kotlin {
     sourceSets {
         val androidMain by getting {
             dependencies {
+
                 implementation("io.ktor:ktor-client-okhttp:2.3.4")
             }
         }
 
         val iosMain by getting {
             dependencies {
+
                 implementation("io.ktor:ktor-client-darwin:2.3.4")
             }
         }
+
+        val desktopMain by getting {
+            dependencies {
+//                implementation("io.ktor:ktor-client-curl:2.3.4")
+                implementation("io.ktor:ktor-client-okhttp:2.3.4")
+            }
+        }
+
+//        val webMain by getting {
+//            dependencies {
+//                implementation("io.ktor:ktor-client-winhttp:2.3.4")
+//            }
+//        }
+
         val commonMain by getting {
             dependencies {
                 implementation(project(":data:network"))
@@ -66,7 +87,7 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test"))
+//                implementation(kotlin("test"))
             }
         }
     }
