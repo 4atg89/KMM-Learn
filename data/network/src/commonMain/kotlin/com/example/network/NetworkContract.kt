@@ -5,5 +5,6 @@ object NetworkContract {
 
     object Games {
         const val GAMES = "$API/games"
+        const val GAME = "$API/game"
     }
 }

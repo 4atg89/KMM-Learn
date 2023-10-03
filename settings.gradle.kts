@@ -4,6 +4,7 @@ rootProject.name = "MyApplication"
 include(":androidApp")
 include(":shared")
 include(":data:network")
+include(":data:games")
 
 pluginManagement {
     includeBuild("build-common")

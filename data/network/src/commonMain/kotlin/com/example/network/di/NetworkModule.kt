@@ -1,6 +1,7 @@
 package com.example.network.di
 
-import com.example.network.TestRequest
+import com.example.network.GameService
+import com.example.network.GameServiceImpl
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -38,5 +39,5 @@ val networkModule = module {
             defaultRequest { url("https://www.freetogame.com") }
         }
     }
-    single { TestRequest(get()) }
+    single<GameService> { GameServiceImpl(get()) }
 }
