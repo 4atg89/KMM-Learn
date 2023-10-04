@@ -13,18 +13,23 @@ import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import org.koin.core.annotation.ComponentScan
+import org.koin.core.annotation.Module
+import org.koin.core.annotation.Single
 import org.koin.dsl.module
+import org.koin.ksp.generated.module
 
 @OptIn(ExperimentalSerializationApi::class)
 val networkModule = module {
-    single {
-        Json {
-            explicitNulls = false
-            ignoreUnknownKeys = true
-            isLenient = true
-            coerceInputValues = true
-        }
-    }
+    includes(NetworkKspModule().module)
+//    single {
+//        Json {
+//            explicitNulls = false
+//            ignoreUnknownKeys = true
+//            isLenient = true
+//            coerceInputValues = true
+//        }
+//    }
     single {
         HttpClient {
             install(Logging) {
@@ -40,4 +45,19 @@ val networkModule = module {
         }
     }
     single<GameService> { GameServiceImpl(get()) }
+}
+
+
+@Module
+@ComponentScan(value = "com.example.network.di")
+class NetworkKspModule {
+    @OptIn(ExperimentalSerializationApi::class)
+    @Single
+    fun provideJson(): Json = Json {
+        explicitNulls = false
+        ignoreUnknownKeys = true
+        isLenient = true
+        coerceInputValues = true
+    }
+
 }

@@ -20,7 +20,7 @@ pluginManagement {
     plugins {
         //todo move to another place
         val kotlinVersion = "1.9.10"//extra["kotlin.version"] as String
-        val agpVersion = "8.1.1"//extra["agp.version"] as String
+        val agpVersion = "8.1.2"//extra["agp.version"] as String
         val composeVersion = "1.5.2"//extra["compose.version"] as String
 
         kotlin("jvm").version(kotlinVersion)

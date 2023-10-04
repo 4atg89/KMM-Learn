@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform")
+    id("com.google.devtools.ksp")
     id("com.android.library")
 //    id("org.jetbrains.compose")
     alias(libs.plugins.jetbrains.compose)
@@ -65,6 +66,7 @@ kotlin {
 //        }
 
         val commonMain by getting {
+            kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
                 implementation(project(":data:network"))
                 //put your multiplatform dependencies here
@@ -91,6 +93,10 @@ kotlin {
             }
         }
     }
+}
+
+dependencies {
+    add("kspCommonMainMetadata", libs.di.koin.ksp)
 }
 
 android {

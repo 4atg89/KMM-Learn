@@ -1,6 +1,6 @@
 [versions]
 #AGP
-androidGradlePlugin = "8.1.1"
+androidGradlePlugin = "8.1.2"
 #KSP
 kspVersion = "1.9.10-1.0.13"
 #Kotlin
@@ -17,8 +17,8 @@ kamel = "0.7.3"
 androidxComposeCompiler = "1.5.3"
 jetbrainsComposeVersion = "1.5.2"
 #Koin
-koinVersion = "3.4.3"
-koinComposeVersion = "1.0.4"
+koinVersion = "3.5.0"
+koinComposeVersion = "1.1.0"
 koinAnnotationsVersion = "1.2.2"
 #Precompose
 precomposeVersion = "1.5.4"
