@@ -49,7 +49,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("main")
+    mainClass.set("desktop")
 }
 
 compose {
