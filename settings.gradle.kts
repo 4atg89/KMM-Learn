@@ -1,14 +1,22 @@
+//enableFeaturePreview("VERSION_CATALOGS")
+
+
 rootProject.name = "MyApplication"
 
 
 include(":androidApp")
 include(":desktop")
 include(":shared")
+include(":ui:games")
 include(":data:network")
 include(":data:games")
-
+includeBuild("build-common") {
+    dependencySubstitution {
+//        substitute(module("${name}:build-common")).using(project(":"))
+    }
+}
 pluginManagement {
-    includeBuild("build-common")
+
     repositories {
         gradlePluginPortal()
         mavenCentral()

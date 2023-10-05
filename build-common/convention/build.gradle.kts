@@ -16,20 +16,27 @@ dependencies {
     compileOnly("org.jetbrains.compose:org.jetbrains.compose.gradle.plugin:1.5.2")
 }
 
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
 gradlePlugin {
     /**
      * Register convention plugins so they are available in the build scripts of the application
      */
     plugins {
 
-        register("kmmProjectLibrary") {
-            id = "example.library"
-            implementationClass = "KotlinLibraryConventionPlugin"
-        }
-
         register("kmmCompose") {
             id = "kmm.compose"
             implementationClass = "ComposeConventionPlugin"
+        }
+
+        register("kmmPreCompose") {
+            id = "kmm.pre-compose"
+            implementationClass = "PreComposeConventionPlugin"
         }
     }
 }

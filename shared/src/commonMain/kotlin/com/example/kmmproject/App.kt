@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.games.UiTest
 import com.example.kmmproject.getPlatform
 import com.example.network.Game
 import com.example.network.GameService
@@ -67,6 +68,7 @@ fun App(click: (Int) -> Unit) {
             }) {
                 Text(greetingText)
             }
+            UiTest()
             val koin = getKoin()
             LaunchedEffect(key1 = Unit) {
                 greetingText = "Hello props, ${getPlatform().name}"
