@@ -18,7 +18,6 @@ plugins {
     id("org.jetbrains.compose").apply(false)
     kotlin("plugin.serialization") apply false
     alias(libs.plugins.google.ksp) version libs.versions.kspVersion
-    id("kmm.pre-compose").apply(false)
     id("kmm.compose").apply(false)
 //    alias(libs.plugins.kmm.example.library) apply false
 //    alias(libs.plugins.kmm.project.compose) apply false

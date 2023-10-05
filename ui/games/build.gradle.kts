@@ -2,7 +2,6 @@ plugins {
     kotlin("multiplatform")
     id("com.google.devtools.ksp")
     id("com.android.library")
-    id("kmm.pre-compose")
     id("kmm.compose")
     kotlin("plugin.serialization")
 }
@@ -35,23 +34,9 @@ kotlin {
     }
 
     sourceSets {
-        val androidMain by getting {
-            dependencies {
-                implementation("io.ktor:ktor-client-okhttp:2.3.4")
-            }
-        }
-
-        val iosMain by getting {
-            dependencies {
-                implementation("io.ktor:ktor-client-darwin:2.3.4")
-            }
-        }
-
-        val desktopMain by getting {
-            dependencies {
-                implementation("io.ktor:ktor-client-okhttp:2.3.4")
-            }
-        }
+        val androidMain by getting
+        val iosMain by getting
+        val desktopMain by getting
 
         val commonMain by getting {
             kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
@@ -61,10 +46,6 @@ kotlin {
                 implementation(libs.kamel.image)
                 implementation(libs.bundles.di.kotlin)
 
-            }
-        }
-        val commonTest by getting {
-            dependencies {
             }
         }
     }
