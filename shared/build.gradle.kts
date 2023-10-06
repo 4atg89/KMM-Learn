@@ -18,7 +18,7 @@ kotlin {
             kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
                 implementation(project(":ui:games"))
-                implementation(project(":data:network"))
+                implementation(project(":data:games"))
                 implementation(libs.coroutines.core)
                 implementation(libs.kamel.image)
                 implementation(libs.bundles.di.kotlin)

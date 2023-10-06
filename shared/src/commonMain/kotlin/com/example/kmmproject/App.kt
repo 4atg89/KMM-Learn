@@ -25,11 +25,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.games.GameRepository
 import com.example.games.UiTest
+import com.example.games.model.Game
+import com.example.games.model.ShortGame
 import com.example.kmmproject.getPlatform
-import com.example.network.Game
-import com.example.network.GameService
-import com.example.network.ShortGame
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import moe.tlaster.precompose.navigation.NavHost
@@ -72,7 +72,7 @@ fun App(click: (Int) -> Unit) {
             val koin = getKoin()
             LaunchedEffect(key1 = Unit) {
                 greetingText = "Hello props, ${getPlatform().name}"
-                props.addAll(koin.get<GameService>().games())
+                props.addAll(koin.get<GameRepository>().games())
             }
         }
     }
@@ -113,17 +113,17 @@ fun Enter() {
                     )
                 }
                 Column {
-                    Text(text = game.value?.title ?: "", modifier = Modifier)
+                    Text(text = game.value?.short?.title ?: "", modifier = Modifier)
                     KamelImage(
                         modifier = Modifier.fillMaxSize(100f),
-                        resource = asyncPainterResource(data = game.value?.thumbnail ?: ""),
-                        contentDescription = game.value?.title,
+                        resource = asyncPainterResource(data = game.value?.short?.thumbnail ?: ""),
+                        contentDescription = game.value?.short?.title,
                     )
 
                 }
                 val koin = getKoin()
                 LaunchedEffect(key1 = Unit) {
-                    game.value = koin.get<GameService>().game(id)
+                    game.value = koin.get<GameRepository>().game(id)
                 }
             }
 

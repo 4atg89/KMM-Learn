@@ -10,6 +10,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(project(":data:network"))
                 implementation(libs.coroutines.core)
                 implementation(libs.bundles.di.kotlin)
             }

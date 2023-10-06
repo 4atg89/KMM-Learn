@@ -1,10 +1,10 @@
-package com.example.network
+package com.example.network.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class ShortGame(
+class ShortGameDTO(
     @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("thumbnail") val thumbnail: String,
@@ -18,7 +18,7 @@ class ShortGame(
 )
 
 @Serializable
-class Game(
+class GameDTO(
     @SerialName("id") val id: Int,
     @SerialName("title") val title: String,
     @SerialName("thumbnail") val thumbnail: String,
