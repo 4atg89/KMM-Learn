@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.google.devtools.ksp")
     id("com.android.library")
-    id("kmm.compose")
+    alias(libs.plugins.ui.compose)
     kotlin("plugin.serialization")
 }
 

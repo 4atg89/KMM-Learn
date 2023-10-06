@@ -63,7 +63,7 @@ jetbrains-kmm = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotl
 
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" } # kotlin("jvm")
 kotlinx-serialization-plugin = { id = "org.jetbrains.kotlin.plugin.serialization", version = "kotlin" } #kotlin("plugin.serialization")
-kmm-project-compose = { id = "kmm.compose", version = "unspecified" }
+ui-compose = { id = "ui.compose", version = "unspecified" }
 kmm-example-library = { id = "example.library", version = "unspecified" }
 
 

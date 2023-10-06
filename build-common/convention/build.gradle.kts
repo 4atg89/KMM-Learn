@@ -29,8 +29,8 @@ gradlePlugin {
      */
     plugins {
 
-        register("kmmCompose") {
-            id = "kmm.compose"
+        register("uiCompose") {
+            id = "ui.compose"
             implementationClass = "ComposeConventionPlugin"
         }
 

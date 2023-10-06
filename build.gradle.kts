@@ -10,18 +10,13 @@ buildscript {
 }
 
 plugins {
-    // this is necessary to avoid the plugins to be loaded multiple times
-    // in each subproject's classloader
     kotlin("multiplatform").apply(false)
     id("com.android.application").apply(false)
     id("com.android.library").apply(false)
     id("org.jetbrains.compose").apply(false)
     kotlin("plugin.serialization") apply false
     alias(libs.plugins.google.ksp) version libs.versions.kspVersion
-    id("kmm.compose").apply(false)
-//    alias(libs.plugins.kmm.example.library) apply false
-//    alias(libs.plugins.kmm.project.compose) apply false
-
+    alias(libs.plugins.ui.compose).apply(false)
 }
 
 subprojects {
