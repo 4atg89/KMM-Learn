@@ -16,7 +16,7 @@ kotlin {
         val commonMain by getting {
             kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
             dependencies {
-                implementation(project(":data:network"))
+                implementation(project(":data:games"))
                 implementation(libs.coroutines.core)
                 implementation(libs.kamel.image)
                 implementation(libs.bundles.di.kotlin)

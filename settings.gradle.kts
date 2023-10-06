@@ -8,6 +8,7 @@ include(":androidApp")
 include(":desktop")
 include(":shared")
 include(":ui:games")
+include(":ui:details")
 include(":data:network")
 include(":data:games")
 
