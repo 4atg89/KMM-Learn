@@ -9,6 +9,7 @@ buildscript {
     }
 }
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     kotlin("multiplatform").apply(false)
     id("com.android.application").apply(false)

@@ -9,13 +9,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-//
 dependencies {
     compileOnly(libs.android.tools.build.gradle.plugin)
     compileOnly(libs.kotlin.gradle.plugin)
     compileOnly("org.jetbrains.compose:org.jetbrains.compose.gradle.plugin:1.5.2")
 }
-
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
 
