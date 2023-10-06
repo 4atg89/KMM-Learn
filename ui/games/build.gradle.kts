@@ -1,10 +1,9 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.google.devtools.ksp")
-    id("com.android.library")
+    alias(libs.plugins.android.library)
     alias(libs.plugins.ui.compose)
+    alias(libs.plugins.google.ksp) version libs.versions.kspVersion
     alias(libs.plugins.kotlin.multiplatform)
-    kotlin("plugin.serialization")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)

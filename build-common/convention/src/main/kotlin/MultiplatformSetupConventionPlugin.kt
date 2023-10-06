@@ -15,7 +15,7 @@ class MultiplatformSetupConventionPlugin : Plugin<Project> {
         val libs = target.extensions.getByType<VersionCatalogsExtension>().named("libs")
         target.pluginManager.apply {
             apply(libs.findPlugin("jetbrains-multiplatform").get().get().pluginId)
-            apply("com.android.library")
+            apply(libs.findPlugin("android-library").get().get().pluginId)
         }
         val library = target.extensions.getByType<LibraryExtension>()
         library.compileOptions {

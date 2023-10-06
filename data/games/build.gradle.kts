@@ -1,7 +1,6 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")
-    alias(libs.plugins.google.ksp) version libs.versions.kspVersion
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.multiplatform)
 }
 
@@ -14,7 +13,6 @@ kotlin {
                 implementation(libs.coroutines.core)
                 implementation(libs.bundles.di.kotlin)
             }
-
         }
     }
 }

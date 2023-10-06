@@ -37,6 +37,9 @@ ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor"
 ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 ktor-kserialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-android = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-desktop = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-ios = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 #Image
 kamel-image = { group = "media.kamel", name = "kamel-image", version.ref = "kamel" }
 
