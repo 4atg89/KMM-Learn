@@ -16,11 +16,9 @@ dependencies {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+    kotlinOptions { jvmTarget = "17" }
 }
+
 gradlePlugin {
     /**
      * Register convention plugins so they are available in the build scripts of the application
@@ -32,9 +30,9 @@ gradlePlugin {
             implementationClass = "ComposeConventionPlugin"
         }
 
-        register("kmmPreCompose") {
-            id = "kmm.pre-compose"
-            implementationClass = "PreComposeConventionPlugin"
+        register("kotlinMultiplatform") {
+            id = "kotlin.multiplatform"
+            implementationClass = "MultiplatformSetupConventionPlugin"
         }
     }
 }

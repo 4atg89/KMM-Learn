@@ -18,6 +18,7 @@ plugins {
     kotlin("plugin.serialization") apply false
     alias(libs.plugins.google.ksp) version libs.versions.kspVersion
     alias(libs.plugins.ui.compose).apply(false)
+    alias(libs.plugins.kotlin.multiplatform).apply(false)
 }
 
 subprojects {

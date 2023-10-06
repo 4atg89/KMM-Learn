@@ -17,7 +17,7 @@ class ComposeConventionPlugin : Plugin<Project> {
         val libs = target.extensions.getByType<VersionCatalogsExtension>().named("libs")
         target.pluginManager.apply {
             apply(libs.findPlugin("jetbrains.compose").get().get().pluginId)
-            apply(libs.findPlugin("jetbrains.kmm").get().get().pluginId)
+            apply(libs.findPlugin("jetbrains-multiplatform").get().get().pluginId)
         }
         target.extensions.getByType<LibraryExtension>().compileOptions {
             sourceCompatibility = JavaVersion.VERSION_17

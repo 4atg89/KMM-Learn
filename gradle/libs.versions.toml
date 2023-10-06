@@ -59,12 +59,12 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-ksp = { id = "com.google.devtools.ksp", version = "kspVersion" }
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrainsComposeVersion" }
-jetbrains-kmm = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+jetbrains-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" } # kotlin("jvm")
 kotlinx-serialization-plugin = { id = "org.jetbrains.kotlin.plugin.serialization", version = "kotlin" } #kotlin("plugin.serialization")
 ui-compose = { id = "ui.compose", version = "unspecified" }
-kmm-example-library = { id = "example.library", version = "unspecified" }
+kotlin-multiplatform = { id = "kotlin.multiplatform", version = "unspecified" }
 
 
 [bundles]

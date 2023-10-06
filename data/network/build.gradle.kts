@@ -1,32 +1,13 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization")
+    alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.google.ksp) version libs.versions.kspVersion
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
-
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "17"
-            }
-        }
-    }
-    jvm("desktop") {
-        compilations.all {
-            kotlinOptions.jvmTarget = "17"
-        }
-    }
-    listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
-        it.binaries.framework {
-            baseName = "network"
-        }
-    }
 
     sourceSets {
         val androidMain by getting {
@@ -63,15 +44,16 @@ kotlin {
 dependencies {
     add("kspCommonMainMetadata", "io.insert-koin:koin-ksp-compiler:1.2.2")//libs.di.koin.ksp)
 }
-
-android {
-    namespace = "com.example.network"
-    compileSdk = 34
-    defaultConfig {
-        minSdk = 24
+tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
+    if (name != "kspCommonMainKotlinMetadata") {
+        dependsOn("kspCommonMainKotlinMetadata")
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+}
+afterEvaluate {
+    tasks.filter {
+        it.name.contains("SourcesJar", true)
+    }?.forEach {
+        println("SourceJarTask====>${it.name}")
+        it.dependsOn("kspCommonMainKotlinMetadata")
     }
 }
